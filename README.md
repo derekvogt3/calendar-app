@@ -2,7 +2,19 @@
 
 Contributing to open source project can be scary. This project is built so Flatiron Cohort NYC-SE-060622 can practice working and contributing to open source projects.
 
-Let's make a calendar app!
+Let's make a calendar app! I'm totally up to suggestions on what to make, I'm hoping this is a colaborative effort so everyone can get better at using github featurs and React :)
+
+Here are a few brainstorming ideas feel free to add your ideas and commit to the readme: 
+    - Create a Calendar with similar features to google calendar 
+        - Toggle between days/weeks/months 
+        - add events to the calendar 
+    - use a db.json file where changes will persist
+
+## Downloading dependencies
+
+To download dependencies, you can run:
+
+### `npm install`
 
 ## Starting the project
 
