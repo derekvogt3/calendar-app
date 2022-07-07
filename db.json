@@ -1,0 +1,15 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "name": "Lunch with friend",
+        "image": "https://curiodyssey.org/wp-content/uploads/2017/03/Mammals-Raccoon.jpg"
+      },
+      {
+        "id": 2,
+        "name": "dinner with mom",
+        "image": "https://www.tn.gov/content/dam/tn/twra/images/mammals/raccoon/raccoon_750x500.jpg"
+      }
+
+    ]
+}
