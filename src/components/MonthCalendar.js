@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import DayForMonth from "./DayForMonth";
+import NewEventForm from "./NewEventForm";
 
 function MonthCalendar() {
   const [dateObjectArray, setDateObjectArray] = useState([]);
+
+  //defaults to current day
 
   const [dateObject, setDateObject] = useState(new Date());
 
@@ -41,6 +44,8 @@ function MonthCalendar() {
     let dateObjectArray = [];
     let dateObject = {};
 
+    //set the month array as an array of object that are either "current month" or "current day" to impact styling
+
     for (let day in dateArray) {
       if (date.getMonth() !== dateArray[day].getMonth()) {
         dateObject = { date: dateArray[day], isCurrentMonth: false };
@@ -74,68 +79,74 @@ function MonthCalendar() {
   });
 
   return (
-    <div className="cal-container">
-      <div className="cal-options-header">
-        <div>
-          <h2>{dateObject.getFullYear()}</h2>
-        </div>
-        <div className="month-nav-container">
-          <button
-            onClick={() =>
-              getMonthCalanderData(
-                new Date(dateObject.getFullYear(), dateObject.getMonth() - 1, 1)
-              )
-            }
-            type="button"
-            className="p-2"
-          >
-            Previous
-          </button>
-          <h2 className="p-2">
-            {dateObject.toLocaleString("default", { month: "long" })}
-          </h2>
-          <button
-            onClick={() =>
-              getMonthCalanderData(
-                new Date(dateObject.getFullYear(), dateObject.getMonth() + 1, 1)
-              )
-            }
-            className="p-2"
-          >
-            Next Month
-          </button>
-        </div>
-      </div>
-
-      <div
-        className="days-of-month-grid-container"
-        //   className={
-        //     "w-full grid grid-cols-7 grid-rows-" + dateObjectArray.length / 7
-        //   }
-      >
-        <div className="cal-day-name">
-          <b>Sunday</b>
-        </div>
-        <div className="cal-day-name">
-          <b>Monday</b>
-        </div>
-        <div className="cal-day-name">
-          <b>Tuesday</b>
-        </div>
-        <div className="cal-day-name">
-          <b>Wednesday</b>
-        </div>
-        <div className="cal-day-name">
-          <b>Thursday</b>
-        </div>
-        <div className="cal-day-name">
-          <b>Friday</b>
-        </div>
-        <div className="cal-day-name">
-          <b>Saturday</b>
+    <div className="app-container">
+      <button>Create Event</button>
+      <div className="cal-container">
+        <div className="cal-options-header">
+          <div>
+            <h2>{dateObject.getFullYear()}</h2>
+          </div>
+          <div className="month-nav-container">
+            <button
+              onClick={() =>
+                getMonthCalanderData(
+                  new Date(
+                    dateObject.getFullYear(),
+                    dateObject.getMonth() - 1,
+                    1
+                  )
+                )
+              }
+              type="button"
+              className="p-2"
+            >
+              Previous
+            </button>
+            <h2 className="p-2">
+              {dateObject.toLocaleString("default", { month: "long" })}
+            </h2>
+            <button
+              onClick={() =>
+                getMonthCalanderData(
+                  new Date(
+                    dateObject.getFullYear(),
+                    dateObject.getMonth() + 1,
+                    1
+                  )
+                )
+              }
+              className="p-2"
+            >
+              Next Month
+            </button>
+          </div>
         </div>
 
-        {datesToInclude}
+        <div className="days-of-month-grid-container">
+          <div className="cal-day-name">
+            <b>Sunday</b>
+          </div>
+          <div className="cal-day-name">
+            <b>Monday</b>
+          </div>
+          <div className="cal-day-name">
+            <b>Tuesday</b>
+          </div>
+          <div className="cal-day-name">
+            <b>Wednesday</b>
+          </div>
+          <div className="cal-day-name">
+            <b>Thursday</b>
+          </div>
+          <div className="cal-day-name">
+            <b>Friday</b>
+          </div>
+          <div className="cal-day-name">
+            <b>Saturday</b>
+          </div>
+
+          {datesToInclude}
+        </div>
       </div>
     </div>
   );
