@@ -47,10 +47,10 @@ function MonthCalendar() {
       } else if (
         today.getDate() + "" + today.getMonth() + "" + today.getFullYear() ===
         dateArray[day].getDate() +
-          "" +
-          dateArray[day].getMonth() +
-          "" +
-          dateArray[day].getFullYear()
+        "" +
+        dateArray[day].getMonth() +
+        "" +
+        dateArray[day].getFullYear()
       ) {
         dateObject = {
           date: dateArray[day],
@@ -76,42 +76,33 @@ function MonthCalendar() {
   return (
     <div className="cal-container">
       <div className="cal-options-header">
-        <div>
+        <div className="yearselector">
           <h2>{dateObject.getFullYear()}</h2>
         </div>
         <div className="month-nav-container">
-          <button
-            onClick={() =>
+          <ul class="pager">
+            <li onClick={() =>
               getMonthCalanderData(
                 new Date(dateObject.getFullYear(), dateObject.getMonth() - 1, 1)
               )
-            }
-            type="button"
-            className="p-2"
-          >
-            Previous
-          </button>
-          <h2 className="p-2">
-            {dateObject.toLocaleString("default", { month: "long" })}
-          </h2>
-          <button
-            onClick={() =>
+            }><a className="previousbackgroundcolor" href="#">Previous</a></li>
+            <li> <span className="p-2 spanmonthselecter">
+            <b>{dateObject.toLocaleString("default", { month: "long" })}</b>
+          </span></li>
+            <li onClick={() =>
               getMonthCalanderData(
                 new Date(dateObject.getFullYear(), dateObject.getMonth() + 1, 1)
               )
-            }
-            className="p-2"
-          >
-            Next Month
-          </button>
+            }><a className="nextbackgroundcolor" href="#">Next Month</a></li>
+          </ul>
         </div>
       </div>
 
       <div
         className="days-of-month-grid-container"
-        //   className={
-        //     "w-full grid grid-cols-7 grid-rows-" + dateObjectArray.length / 7
-        //   }
+      //   className={
+      //     "w-full grid grid-cols-7 grid-rows-" + dateObjectArray.length / 7
+      //   }
       >
         <div className="cal-day-name">
           <b>Sunday</b>
