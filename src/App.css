@@ -1,3 +1,4 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css");
 
 .app-container {
   display: flex;
@@ -9,7 +10,7 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  border-style: solid;
+  border: 1px solid #c3c3c3;
 
 }
 
@@ -29,10 +30,10 @@
 }
 
 .cal-day-name{
-  background-color: white;
-
+  background-color: #f3f3f3;
   text-align: center;
-
+  border: 1px solid #c5c3c3;
+  padding: 10px;
 }
 
 .days-of-month-grid-container {
@@ -43,30 +44,54 @@
 }
 
 .cal-day-prev-month{
-  background-color: gray;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
+  border: 1px solid #c3c0c0;
+  background-color: #dbdbdb;
 
 }
 
 .cal-day-cur-month{
-  background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-}
+  border: 1px solid #c3c0c0;
 
+}
+.yearselector{
+  margin-left: 20px;
+
+}
+.spanmonthselecter{
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  margin-right: 5px;
+  background-color: #f3f1f1 !important;
+}
 .month-nav-container{
   display: flex;
   align-items: center;
 }
 
 .current-day{  
-  height: 25px;
-  width: 25px;
+  height: 100%;
+  width: 100%;
   background-color: aquamarine;
-  border-radius: 50%;
   display: inline-block;
 
+}
+
+.month-nav-container a {
+  border-radius: 0px !important;
+}
+
+.previousbackgroundcolor{
+  background-color: #4c5fed !important;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.nextbackgroundcolor{
+  background-color: #4c5fed !important;
+  color: #fff;
+  font-weight: bold;
 }

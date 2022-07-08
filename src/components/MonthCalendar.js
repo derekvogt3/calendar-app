@@ -79,15 +79,14 @@ function MonthCalendar() {
   });
 
   return (
-    <div className="app-container">
-      <button>Create Event</button>
-      <div className="cal-container">
-        <div className="cal-options-header">
-          <div>
-            <h2>{dateObject.getFullYear()}</h2>
-          </div>
-          <div className="month-nav-container">
-            <button
+    <div className="cal-container">
+      <div className="cal-options-header">
+        <div className="yearselector">
+          <h2>{dateObject.getFullYear()}</h2>
+        </div>
+        <div className="month-nav-container">
+          <ul class="pager">
+            <li
               onClick={() =>
                 getMonthCalanderData(
                   new Date(
@@ -97,15 +96,18 @@ function MonthCalendar() {
                   )
                 )
               }
-              type="button"
-              className="p-2"
             >
-              Previous
-            </button>
-            <h2 className="p-2">
-              {dateObject.toLocaleString("default", { month: "long" })}
-            </h2>
-            <button
+              <a className="previousbackgroundcolor" href="#">
+                Previous
+              </a>
+            </li>
+            <li>
+              {" "}
+              <span className="p-2 spanmonthselecter">
+                <b>{dateObject.toLocaleString("default", { month: "long" })}</b>
+              </span>
+            </li>
+            <li
               onClick={() =>
                 getMonthCalanderData(
                   new Date(
@@ -115,11 +117,41 @@ function MonthCalendar() {
                   )
                 )
               }
-              className="p-2"
             >
-              Next Month
-            </button>
-          </div>
+              <a className="nextbackgroundcolor" href="#">
+                Next Month
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        className="days-of-month-grid-container"
+        //   className={
+        //     "w-full grid grid-cols-7 grid-rows-" + dateObjectArray.length / 7
+        //   }
+      >
+        <div className="cal-day-name">
+          <b>Sunday</b>
+        </div>
+        <div className="cal-day-name">
+          <b>Monday</b>
+        </div>
+        <div className="cal-day-name">
+          <b>Tuesday</b>
+        </div>
+        <div className="cal-day-name">
+          <b>Wednesday</b>
+        </div>
+        <div className="cal-day-name">
+          <b>Thursday</b>
+        </div>
+        <div className="cal-day-name">
+          <b>Friday</b>
+        </div>
+        <div className="cal-day-name">
+          <b>Saturday</b>
         </div>
 
         <div className="days-of-month-grid-container">
